@@ -35,13 +35,13 @@ typedef struct SceCameraConfig {
 	uint32_t unknown[100]; //0x4
 } SceCameraConfig;
 
-extern int (*sceCameraOpen)(int userid, int type, int index, void *);
-extern int (*sceCameraClose)(int handle);
-extern int (*sceCameraIsAttached)(int index);
-extern int (*sceCameraGetFrameData)(int handle, SceCameraFrameData *frame);
-extern int (*sceCameraStart)(int handle, SceCameraStartParameter *param);
-extern int (*sceCameraStop)(int handle);
-extern int (*sceCameraGetDeviceInfo)(int handle, SceCameraDeviceInfo *info);
-extern int (*sceCameraGetDeviceConfig)(int handle, SceCameraConfig *config);
-extern int (*sceCameraGetConfig)(int handle, SceCameraConfig *config);
-extern int (*sceCameraSetConfig)(int handle, SceCameraConfig *config);
+extern int (* const sceCameraOpen)(int userid, int type, int index, void *);
+extern int (* const sceCameraClose)(int handle);
+extern int (* const sceCameraIsAttached)(int index);
+extern int (* const sceCameraGetFrameData)(int handle, SceCameraFrameData *frame);
+extern int (* const sceCameraStart)(int handle, SceCameraStartParameter *param);
+extern int (* const sceCameraStop)(int handle);
+extern int (* const sceCameraGetDeviceInfo)(int handle, SceCameraDeviceInfo *info);
+extern int (* const sceCameraGetDeviceConfig)(int handle, SceCameraConfig *config);
+extern int (* const sceCameraGetConfig)(int handle, SceCameraConfig *config);
+extern int (* const sceCameraSetConfig)(int handle, SceCameraConfig *config);

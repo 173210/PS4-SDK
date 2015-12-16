@@ -1,7 +1,7 @@
 #pragma once
 
-extern int (*scePadInit)(void);
-extern int (*scePadOpen)(int userID, int, int, void *);
-extern int (*scePadClose)(int handle);
-extern int (*scePadRead)(int handle, void *data, int count);
-extern int (*scePadReadState)(int handle, void *data);
+extern int (* const scePadInit)(void);
+extern int (* const scePadOpen)(int userID, int, int, void *);
+extern int (* const scePadClose)(int handle);
+extern int (* const scePadRead)(int handle, void *data, int count);
+extern int (* const scePadReadState)(int handle, void *data);

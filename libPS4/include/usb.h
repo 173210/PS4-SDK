@@ -176,28 +176,28 @@ struct libusb_config_descriptor {
 typedef struct libusb_device libusb_device;
 typedef struct libusb_device_handle libusb_device_handle;
 
-extern int (*sceUsbdInit)(void);
-extern void (*sceUsbdExit)(void);
+extern int (* const sceUsbdInit)(void);
+extern void (* const sceUsbdExit)(void);
 
-extern ssize_t (*sceUsbdGetDeviceList)(libusb_device ***list);
-extern void (*sceUsbdFreeDeviceList)(libusb_device **list, int unrefDevices);
+extern ssize_t (* const sceUsbdGetDeviceList)(libusb_device ***list);
+extern void (* const sceUsbdFreeDeviceList)(libusb_device **list, int unrefDevices);
 
-extern int (*sceUsbdGetDeviceDescriptor)(libusb_device *device, libusb_device_descriptor *desc);
+extern int (* const sceUsbdGetDeviceDescriptor)(libusb_device *device, libusb_device_descriptor *desc);
 
-extern int (*sceUsbdOpen)(libusb_device *dev, libusb_device_handle **devh);
+extern int (* const sceUsbdOpen)(libusb_device *dev, libusb_device_handle **devh);
 extern libusb_device_handle *(*sceUsbdOpenDeviceWithVidPid)(unsigned short vendorId, unsigned short productId);
-extern void (*sceUsbdClose)(libusb_device_handle *devh);
+extern void (* const sceUsbdClose)(libusb_device_handle *devh);
 
-extern int (*sceUsbdSetInterfaceAltSetting)(libusb_device_handle *dev, int interface_number, int alternate_setting);
-extern int (*sceUsbdClearHalt)(libusb_device_handle *devh, unsigned char endpoint);
-extern int (*sceUsbdResetDevice)(libusb_device_handle *devh);
-extern int (*sceUsbdCheckConnected)(libusb_device_handle *devh);
+extern int (* const sceUsbdSetInterfaceAltSetting)(libusb_device_handle *dev, int interface_number, int alternate_setting);
+extern int (* const sceUsbdClearHalt)(libusb_device_handle *devh, unsigned char endpoint);
+extern int (* const sceUsbdResetDevice)(libusb_device_handle *devh);
+extern int (* const sceUsbdCheckConnected)(libusb_device_handle *devh);
 
-extern int (*sceUsbdControlTransfer)(libusb_device_handle *devh, uint8_t bmRequestType, uint8_t bRequest, uint16_t wValue, uint16_t wIndex, unsigned char *data, uint16_t wLength, unsigned int timeout);
-extern int (*sceUsbdBulkTransfer)(struct libusb_device_handle *devh, unsigned char endpoint, unsigned char *data, int length, int *transferred, unsigned int timeout);
-extern int (*sceUsbdInterruptTransfer)(struct libusb_device_handle *devh, unsigned char endpoint, unsigned char *data, int length, int *transferred,  unsigned int timeout);
+extern int (* const sceUsbdControlTransfer)(libusb_device_handle *devh, uint8_t bmRequestType, uint8_t bRequest, uint16_t wValue, uint16_t wIndex, unsigned char *data, uint16_t wLength, unsigned int timeout);
+extern int (* const sceUsbdBulkTransfer)(struct libusb_device_handle *devh, unsigned char endpoint, unsigned char *data, int length, int *transferred, unsigned int timeout);
+extern int (* const sceUsbdInterruptTransfer)(struct libusb_device_handle *devh, unsigned char endpoint, unsigned char *data, int length, int *transferred,  unsigned int timeout);
 
-extern int (*sceUsbdGetActiveConfigDescriptor)(libusb_device *dev, struct libusb_config_descriptor **config);
-extern int (*sceUsbdGetConfigDescriptor)(libusb_device *dev, uint8_t config_index, struct libusb_config_descriptor **config);
-extern int (*sceUsbdGetConfigDescriptorByValue)(libusb_device *dev, uint8_t bConfigurationValue, struct libusb_config_descriptor **config);
-extern void (*sceUsbdFreeConfigDescriptor)(struct libusb_config_descriptor *config);
+extern int (* const sceUsbdGetActiveConfigDescriptor)(libusb_device *dev, struct libusb_config_descriptor **config);
+extern int (* const sceUsbdGetConfigDescriptor)(libusb_device *dev, uint8_t config_index, struct libusb_config_descriptor **config);
+extern int (* const sceUsbdGetConfigDescriptorByValue)(libusb_device *dev, uint8_t bConfigurationValue, struct libusb_config_descriptor **config);
+extern void (* const sceUsbdFreeConfigDescriptor)(struct libusb_config_descriptor *config);

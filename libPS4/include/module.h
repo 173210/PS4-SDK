@@ -15,7 +15,7 @@ struct moduleInfo {
 	char padding2[0x3c]; // 0x124
 };
 
-extern int (*sceSysmoduleLoadModule)(int id);
+extern int (* const sceSysmoduleLoadModule)(int id);
 
 int getFunctionAddressByName(int loadedModuleID, char *name, void *destination);
 int getLoadedModules(int *destination, int max, int *count);

@@ -42,26 +42,26 @@ struct sockaddr {
 
 typedef unsigned int socklen_t;
 
-extern int (*sceNetSocket)(const char *, int, int, int);
-extern int (*sceNetSocketClose)(int);
-extern int (*sceNetConnect)(int, struct sockaddr *, int);
-extern int (*sceNetSend)(int, const void *, size_t, int);
-extern int (*sceNetBind)(int, struct sockaddr *, int);
-extern int (*sceNetListen)(int, int);
-extern int (*sceNetAccept)(int, struct sockaddr *, unsigned int *);
-extern int (*sceNetRecv)(int, void *, size_t, int);
-extern int (*sceNetSocketAbort)(int , int );
+extern int (* const sceNetSocket)(const char *, int, int, int);
+extern int (* const sceNetSocketClose)(int);
+extern int (* const sceNetConnect)(int, struct sockaddr *, int);
+extern int (* const sceNetSend)(int, const void *, size_t, int);
+extern int (* const sceNetBind)(int, struct sockaddr *, int);
+extern int (* const sceNetListen)(int, int);
+extern int (* const sceNetAccept)(int, struct sockaddr *, unsigned int *);
+extern int (* const sceNetRecv)(int, void *, size_t, int);
+extern int (* const sceNetSocketAbort)(int , int );
 
-extern int (*sceNetGetsockname)(int, struct sockaddr *, unsigned int *);
-extern int (*sceNetGetsockopt)(int s, int level, int optname, void *restrict optval, socklen_t *restrict optlen);
-extern int (*sceNetSetsockopt)(int s, int level, int optname, const void *optval, socklen_t optlen);
+extern int (* const sceNetGetsockname)(int, struct sockaddr *, unsigned int *);
+extern int (* const sceNetGetsockopt)(int s, int level, int optname, void *restrict optval, socklen_t *restrict optlen);
+extern int (* const sceNetSetsockopt)(int s, int level, int optname, const void *optval, socklen_t optlen);
 
-extern const char (*sceNetInetNtop)(int af, const void *src, char *dst, int size);
-extern int (*sceNetInetPton)(int af, const char *src, void *dst);
+extern const char (* const sceNetInetNtop)(int af, const void *src, char *dst, int size);
+extern int (* const sceNetInetPton)(int af, const char *src, void *dst);
 
-extern uint64_t (*sceNetHtonll)(uint64_t host64);
-extern uint32_t (*sceNetHtonl)(uint32_t host32);
-extern uint16_t (*sceNetHtons)(uint16_t host16);
-extern uint64_t (*sceNetNtohll)(uint64_t net64);
-extern uint32_t (*sceNetNtohl)(uint32_t net32);
-extern uint16_t (*sceNetNtohs)(uint16_t net16);
+extern uint64_t (* const sceNetHtonll)(uint64_t host64);
+extern uint32_t (* const sceNetHtonl)(uint32_t host32);
+extern uint16_t (* const sceNetHtons)(uint16_t host16);
+extern uint64_t (* const sceNetNtohll)(uint64_t net64);
+extern uint32_t (* const sceNetNtohl)(uint32_t net32);
+extern uint16_t (* const sceNetNtohs)(uint16_t net16);
