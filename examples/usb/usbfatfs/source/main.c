@@ -22,11 +22,6 @@ int _netdebug_sock;
 
 int _main(void)
 {
-	// Init and resolve libraries
-	initKernel();
-	initLibc();
-	initNetwork();
-
 	struct sockaddr_in server;
 
 	server.sin_len = sizeof(server);

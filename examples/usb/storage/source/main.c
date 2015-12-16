@@ -326,13 +326,6 @@ static int test_mass_storage(libusb_device_handle *handle, uint8_t endpoint_in, 
 }
 
 int _main(void) {
-	// Load modules
-	initKernel();
-	
-	initLibc();
-	initNetwork();
-	initUsb();
-
 	// Init netdebug
 	struct sockaddr_in server;
 	server.sin_len = sizeof(server);

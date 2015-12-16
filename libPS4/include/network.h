@@ -65,5 +65,3 @@ extern uint16_t (*sceNetHtons)(uint16_t host16);
 extern uint64_t (*sceNetNtohll)(uint64_t net64);
 extern uint32_t (*sceNetNtohl)(uint32_t net32);
 extern uint16_t (*sceNetNtohs)(uint16_t net16);
-
-void initNetwork(void);

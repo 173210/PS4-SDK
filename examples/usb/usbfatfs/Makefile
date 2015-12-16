@@ -23,7 +23,7 @@ LIBS	:=	-lPS4 -lusbfatfs
 TARGET = $(shell basename $(CURDIR)).bin
 
 $(TARGET): $(ODIR) $(OBJS)
-	$(CC) $(LIBPS4)/crt0.s $(ODIR)/*.o -o temp.t $(CFLAGS) $(LFLAGS) $(LIBS)
+	$(CC) $(LIBPS4)/crt0.c $(ODIR)/*.o -o temp.t $(CFLAGS) $(LFLAGS) $(LIBS)
 	$(OBJCOPY) -O binary temp.t $(TARGET)
 	rm -f temp.t
 

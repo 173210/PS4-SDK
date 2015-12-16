@@ -1,13 +1,6 @@
 #include "ps4.h"
 
 int _main(void) {
-	// Init and resolve libraries
-	initKernel();
-	
-	initLibc();
-	initNetwork();
-	
-	
 	// Connect to debug server
 	char socketName[] = "debug";
 	

@@ -22,5 +22,3 @@ int getLoadedModules(int *destination, int max, int *count);
 int getModuleInfo(int loadedModuleID, struct moduleInfo *destination);
 int loadModule(const char *name, int *idDestination);
 int unloadModule(int id);
-
-void initModule(void);

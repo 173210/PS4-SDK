@@ -3,8 +3,6 @@
 
 #include "module.h"
 
-int (*sceSysmoduleLoadModule)(int id);
-
 SYSCALL(getFunctionAddressByName, 591);
 SYSCALL(getLoadedModules, 592);
 
@@ -19,11 +17,4 @@ int loadModule(const char *name, int *idDestination) {
 
 int unloadModule(int id) {
 	return syscall(595, id, 0, 0);
-}
-
-void initModule(void) {
-	int libModule = sceKernelLoadStartModule("libSceSysmodule.sprx", 0, NULL, 0, 0, 0);
-	
-	// Just use sceKernelLoadStartModule instead
-	RESOLVE(libModule, sceSysmoduleLoadModule);
 }

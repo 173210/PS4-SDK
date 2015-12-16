@@ -46,5 +46,3 @@ extern void (*seekdir)(DIR *dirp, long loc);
 extern void (*rewinddir)(DIR *dirp);
 extern int (*closedir)(DIR *dirp);
 extern int (*dirfd)(DIR *dirp);
-
-void initLibc(void);

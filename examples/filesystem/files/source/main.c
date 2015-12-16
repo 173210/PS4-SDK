@@ -8,13 +8,6 @@
 	} while(0)
 
 int _main(void) {
-	// Init and resolve libraries
-	initKernel();
-	
-	initLibc();
-	initNetwork();
-	
-	
 	// Connect to server
 	char socketName[] = "debug";
 	

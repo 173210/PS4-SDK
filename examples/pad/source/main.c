@@ -12,22 +12,7 @@
 unsigned char data[512];
 
 int _main(void) {
-	// Init and resolve libraries
-	initKernel();
-	
-	initLibc();
-	initNetwork();
-	
-	
-	// Get id of already loaded pad module
-	int padModule;
-	loadModule("libScePad.sprx", &padModule);
-	
-	// Unload it
-	unloadModule(padModule);
-	
-	// Start fresh
-	initPad();
+	scePadInit();
 	
 	
 	// Connect to debug server

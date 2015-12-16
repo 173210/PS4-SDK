@@ -201,5 +201,3 @@ extern int (*sceUsbdGetActiveConfigDescriptor)(libusb_device *dev, struct libusb
 extern int (*sceUsbdGetConfigDescriptor)(libusb_device *dev, uint8_t config_index, struct libusb_config_descriptor **config);
 extern int (*sceUsbdGetConfigDescriptorByValue)(libusb_device *dev, uint8_t bConfigurationValue, struct libusb_config_descriptor **config);
 extern void (*sceUsbdFreeConfigDescriptor)(struct libusb_config_descriptor *config);
-
-void initUsb(void);

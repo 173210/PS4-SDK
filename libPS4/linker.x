@@ -21,6 +21,15 @@ SECTIONS
 
 	/* Data segment */
 	. = 0x926300000;
-	.data : { *(.data) } : data_seg
+	.data : {
+		__moduleTop = .;
+		KEEP(*(.data.module))
+		__moduleBtm = .;
+		__stubTop = .;
+		KEEP(*(.data.stub))
+		__stubBtm = .;
+
+		*(.data)
+	} : data_seg
 	.bss  : { *(.bss) }  : data_seg
 }

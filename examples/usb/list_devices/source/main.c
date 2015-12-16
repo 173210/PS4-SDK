@@ -42,13 +42,6 @@ Device 0
 	} while(0)
 
 int _main(void) {
-	// Load modules
-	initKernel();
-	
-	initLibc();
-	initNetwork();
-	initUsb();
-
 	// Init netdebug
 	struct sockaddr_in server;
 	server.sin_len = sizeof(server);

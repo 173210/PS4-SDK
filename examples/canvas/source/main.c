@@ -55,12 +55,6 @@ void *canvasRenderer(void *arg) {
 }
 
 int _main(void) {
-	// Init and resolve libraries
-	initKernel();
-	
-	initPthread();
-	
-	
 	// Create our canvas rendering thread
 	ScePthread thread;
 	scePthreadCreate(&thread, NULL, canvasRenderer, NULL, "canvasRenderer");

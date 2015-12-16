@@ -45,5 +45,3 @@ extern int (*sceCameraGetDeviceInfo)(int handle, SceCameraDeviceInfo *info);
 extern int (*sceCameraGetDeviceConfig)(int handle, SceCameraConfig *config);
 extern int (*sceCameraGetConfig)(int handle, SceCameraConfig *config);
 extern int (*sceCameraSetConfig)(int handle, SceCameraConfig *config);
-
-void initCamera(void);

@@ -20,5 +20,3 @@ extern int (*scePthreadMutexLock)(ScePthreadMutex *mutex);
 extern int (*scePthreadMutexTrylock)(ScePthreadMutex *mutex);
 extern int (*scePthreadMutexTimedlock)(ScePthreadMutex *mutex, SceKernelUseconds usec);
 extern int (*scePthreadMutexUnlock)(ScePthreadMutex *mutex);
-
-void initPthread(void);
