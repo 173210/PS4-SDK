@@ -1,4 +1,8 @@
+#ifdef MODULE_ANUAL
+	.data
+#else
 	.section .data.module, "aw"
+#endif
 	.align	8
 	.global	MODULE_SYMBOL
 	.type	MODULE_SYMBOL, @common

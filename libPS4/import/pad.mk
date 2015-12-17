@@ -1,2 +1,2 @@
-$(eval $(call IMPORT,pad,__libScePad,\"libScePad.sprx\",	\
+$(eval $(call IMPORT,pad,-DMODULE_SYMBOL=__libScePad -DMODULE_PATH=\"libScePad.sprx\",	\
 	scePadInit scePadOpen scePadClose scePadRead scePadReadState))

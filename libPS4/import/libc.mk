@@ -1,4 +1,4 @@
-$(eval $(call IMPORT,libc,__libSceLibcInternal,\"libSceLibcInternal.sprx\",	\
+$(eval $(call IMPORT,libc,-DMODULE_SYMBOL=__libSceLibcInternal -DMODULE_PATH=\"libSceLibcInternal.sprx\",	\
 	malloc free calloc realloc memset memcpy memcmp strcpy strncpy	\
 	strcat strncat strlen strcmp strncmp sprintf snprintf sscanf	\
 	strchr strrchr srand rand asctime asctime_r ctime ctime_r	\

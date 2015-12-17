@@ -10,6 +10,10 @@ extern union module __moduleBtm[];
 extern void *__stubTop[];
 extern void *__stubBtm[];
 
+extern union module __libkernel;
+int (* sceKernelLoadStartModule)(const char *name,
+	size_t argc, const void *argv, unsigned int flags, int, int);
+
 int _main(int argc, char *argv[]);
 
 static void loadModules()
@@ -17,10 +21,14 @@ static void loadModules()
 	union module *p;
 	int id;
 
+	loadModule(__libkernel.s, &__libkernel.id);
+	getFunctionAddressByName(__libkernel.id,
+		"sceKernelLoadStartModule", sceKernelLoadStartModule);
+
 	for (p = __moduleTop; p != __moduleBtm; p++) {
 		loadModule(p->s, &id);
 		unloadModule(id);
-		loadModule(p->s, &p->id);
+		p->id = sceKernelLoadStartModule(p->s, 0, NULL, 0, 0, 0);
 	}
 }
 
