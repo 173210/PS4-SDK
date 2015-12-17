@@ -16,6 +16,10 @@ OBJS := $(patsubst $(SDIR)/%.c, build/%.o, $(CFILES))	\
 
 TARGET = $(shell basename $(CURDIR)).a
 
+all: $(TARGET)
+
+include import.mk
+
 $(TARGET): $(ODIR) $(OBJS)
 	$(AR) rcs $@ $(OBJS)
 
@@ -35,5 +39,3 @@ $(ODIR):
 
 clean:
 	rm -f $(TARGET) $(ODIR)/*.o
-
-include import.mk
